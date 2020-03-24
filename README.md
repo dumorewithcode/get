@@ -2,10 +2,12 @@
 
 My bug bounty recon process automated
 
-<h3>Usage</h3>
+<h3>Requirements</h3>
 
-python recon.py -d domain -w wordlist
+requires go to be installed
 
-requires go to be installed 
+requires subfinder, findomain, httprobe, ffuf to be installed and added to /usr/bin
 
-requires subfinder, findomain, httprobe, ffuf to be installed and added to /usr/bin 
+<h3>Basic Usage</h3>
+
+python recon.py -d domain -w wordlist 
