@@ -4,9 +4,9 @@ My bug bounty recon process automated
 
 <h3>Requirements</h3>
 
-requires go to be installed
+requires <a href="https://golang.org/">go</a> to be installed
 
-requires subfinder, findomain, httprobe, ffuf to be installed and added to /usr/bin
+requires <a href="https://github.com/projectdiscovery/subfinder">subfinder</a>, <a href="https://github.com/Edu4rdSHL/findomain">findomain</a>, <a href="https://github.com/tomnomnom/httprobe">httprobe</a>, <a href="https://github.com/ffuf/ffuf">ffuf</a> to be installed and added to /usr/bin
 
 <h3>Basic Usage</h3>
 
