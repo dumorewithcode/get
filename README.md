@@ -1,4 +1,4 @@
-<h2>recon.py</h2>
+<h2>reconf.py</h2>
 
 My bug bounty recon process automated
 
@@ -10,4 +10,4 @@ requires <a href="https://github.com/projectdiscovery/subfinder" target="_blank"
 
 <h3>Basic Usage</h3>
 
-python recon.py -d domain -w wordlist 
+python reconf.py -d domain -w wordlist 
