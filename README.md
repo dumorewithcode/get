@@ -15,7 +15,7 @@
 - [httpx](https://github.com/projectdiscovery/httpx)
 - [getJS](https://github.com/003random/getJS)
 
-## Basic Usage
+## Usage
 
 ```
 user@guest:~/tools/scripts/recon$ ./get.sh tesla.com
