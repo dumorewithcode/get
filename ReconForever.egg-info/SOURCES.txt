@@ -1,7 +1,0 @@
-recon.py
-ReconForever.egg-info/PKG-INFO
-ReconForever.egg-info/SOURCES.txt
-ReconForever.egg-info/dependency_links.txt
-ReconForever.egg-info/entry_points.txt
-ReconForever.egg-info/requires.txt
-ReconForever.egg-info/top_level.txt

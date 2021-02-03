@@ -1,13 +1,31 @@
-<h2>reconf.py</h2>
+# get
 
-My bug bounty recon process automated
+- This script creates a target specific wordlist for pentesting using wayback
 
-<h3>Requirements</h3>
+## Requirements
 
-requires <a href="https://golang.org/" target="_blank" rel="noopener noreferrer">go</a> to be installed
+- [golang](https://golang.org/)
+- [anew](https://github.com/tomnomnom/anew)
+- [assetfinder](https://github.com/tomnomnom/assetfinder)
+- [httprobe](https://github.com/tomnomnom/httprobe)
+- [unfurl](https://github.com/tomnomnom/unfurl)
+- [amass](https://github.com/OWASP/Amass)
+- [subfinder](https://github.com/projectdiscovery/subfinder)
+- [gau](https://github.com/lc/gau)
+- [httpx](https://github.com/projectdiscovery/httpx)
+- [getJS](https://github.com/003random/getJS)
 
-requires <a href="https://github.com/projectdiscovery/subfinder" target="_blank" rel="noopener noreferrer">subfinder</a>, <a href="https://github.com/Edu4rdSHL/findomain" target="_blank" rel="noopener noreferrer">findomain</a>, <a href="https://github.com/tomnomnom/httprobe" target="_blank" rel="noopener noreferrer">httprobe</a>, <a href="https://github.com/ffuf/ffuf" target="_blank" rel="noopener noreferrer">ffuf</a> to be installed and added to /usr/bin
+## Basic Usage
 
-<h3>Basic Usage</h3>
-
-python reconf.py -d domain -w wordlist 
+```
+user@guest:~/tools/scripts/recon$ ./get.sh tesla.com
+```
+```
+user@guest:~/tools/scripts/recon$ echo tesla.com | ./get.sh
+```
+```
+user@guest:~/tools/scripts/recon$ ./get.sh domains.txt
+```
+```
+user@guest:~/tools/scripts/recon$ cat domains.txt | ./get.sh
+```
