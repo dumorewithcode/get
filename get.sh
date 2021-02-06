@@ -40,7 +40,7 @@ get_wayback_results() {
 get_jsfiles() {
     echo "${green}[+] Getting js files"
     awk '/.js/ {print}' $basepath/waybackresults.txt | anew $basepath/temp_jsfiles.txt > /dev/null
-    echo $domain | httpx -silent -no-color | getJS -complete | grep $domain | anew $basepath/temp_jsfiles.txt > /dev/null
+    echo $domain | httpx -silent -no-color | getJS --complete | grep $domain | anew $basepath/temp_jsfiles.txt > /dev/null
     cat $basepath/temp_jsfiles.txt | httpx -no-color -status-code -silent | awk -F '[][]' '$2>199 && $2<300 {print $1}'| anew $basepath/jsfiles.txt > /dev/null
 }
 
@@ -88,13 +88,12 @@ extract_urls() {
 generate_target_wordlist() {
     echo "${green}[+] Generating wordlist"
     cat $basepath/paths.txt | awk '{ gsub("/", "\n") } 1' | anew $basepath/temp_wordlist.txt > /dev/null
-    cat $basepath/temp_wordlist.txt | awk '! /\./ && ! /\,/ && ! /:/ && ! /+/ && ! /%/ && ! /;/ && ! /=/ && !/ /'  | anew $basepath/wordlist.txt > /dev/null
+    cat $basepath/temp_wordlist.txt | awk '! /\./ && ! /,/ && ! /:/ && ! /+/ && ! /%/ && ! /;/ && ! /=/ && !/ /'  | anew $basepath/wordlist.txt > /dev/null
 }
 
 run_eyewitness() {
     echo "${green}[+] Running eyewitness"
-    mkdir -p $basepath/eyewitness
-    ~/tools/EyeWitness/EyeWitness.py --web -f $basepath/subdomains.txt -d $basepath/eyewitness > /dev/null
+    ~/tools/EyeWitness/Python/EyeWitness.py --web -f $basepath/subdomains.txt -d $basepath/eyewitness > /dev/null
 }
 
 cleanup() {
@@ -142,14 +141,30 @@ main() {
         mkdir -p $current_directory/recon/$domain
         basepath=$current_directory/recon/$domain
         get_subdomains
+        duration=$SECONDS
+        echo "${yellow}[+] $(($duration / 60)) minutes and $(($duration % 60)) elapsed."
         get_wayback_results
+        duration=$SECONDS
+        echo "${yellow}[+] $(($duration / 60)) minutes and $(($duration % 60)) elapsed."
         get_jsfiles
+        duration=$SECONDS
+        echo "${yellow}[+] $(($duration / 60)) minutes and $(($duration % 60)) elapsed."
         # scan_jsfiles
+        # echo "${yellow}[+] $(($duration / 60)) minutes and $(($duration % 60)) elapsed."
         extract_paths
+        duration=$SECONDS
+        echo "${yellow}[+] $(($duration / 60)) minutes and $(($duration % 60)) elapsed."
         extract_params
+        duration=$SECONDS
+        echo "${yellow}[+] $(($duration / 60)) minutes and $(($duration % 60)) elapsed."
         # extract_urls
+        # echo "${yellow}[+] $(($duration / 60)) minutes and $(($duration % 60)) elapsed."
         generate_target_wordlist
-        # run_eyewitness                                        
+        duration=$SECONDS
+        echo "${yellow}[+] $(($duration / 60)) minutes and $(($duration % 60)) elapsed."
+        run_eyewitness
+        duration=$SECONDS
+        echo "${yellow}[+] $(($duration / 60)) minutes and $(($duration % 60)) elapsed."                                        
         cleanup
         duration=$SECONDS
         echo "${green}[+] Completed wordlists for [ $domain ]"
