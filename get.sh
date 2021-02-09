@@ -162,7 +162,7 @@ main() {
         generate_target_wordlist
         duration=$SECONDS
         echo "${yellow}[+] $(($duration / 60)) minutes and $(($duration % 60)) elapsed."
-        # run_eyewitness Need to have eyewitness installed to run
+        # run_eyewitness Need to have eyewitness installed to run ~/tools/EyeWitness/Python/EyeWitness.py
         duration=$SECONDS
         echo "${yellow}[+] $(($duration / 60)) minutes and $(($duration % 60)) elapsed."                                        
         cleanup
