@@ -93,7 +93,7 @@ generate_target_wordlist() {
 
 run_eyewitness() {
     echo "${green}[+] Running eyewitness"
-    ~/tools/EyeWitness/Python/EyeWitness.py --web -f $basepath/subdomains.txt -d $basepath/eyewitness > /dev/null
+    ~/tools/EyeWitness/Python/EyeWitness.py --web -f $basepath/subdomains.txt -d $basepath/eyewitness --no-prompt > /dev/null
 }
 
 cleanup() {
